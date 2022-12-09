@@ -1,0 +1,17 @@
+@keyframes my-animations{
+    0%{ Background-color:red;
+        color:green;
+        transform:scale(0.5);
+    }
+    50%{
+        transform:scale(1.2);
+    }
+    100%{ background-color:green;
+        color:red;
+        transform:scale(1);
+    }
+}
+
+nav ul li:hover{
+    /*animation:my-animations 700ms forwards;*/
+}

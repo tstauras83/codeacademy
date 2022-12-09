@@ -1,0 +1,71 @@
+html, body{
+    margin: 0px;
+    font-family: "Roboto Light", sans-serif, "DejaVu Sans";
+    font-size: 24px;
+}
+
+body{
+    display:grid;
+    grid-template-areas:
+        'h'
+        'm'
+        'a'
+        'f'
+    ;
+    grid-gap:0px;
+    grid-template-rows:50px auto 100px;
+    grid-template-columns:auto auto 300px;
+
+}
+
+body > article{
+    grid-area: a;
+}
+
+body > header{
+    grid-area: h;
+}
+
+body > footer{
+    grid-area: f;
+}
+
+
+body > main{
+    grid-area: m;
+}
+
+
+main{
+    display:grid;
+    grid-template-areas: 'h3' 'text' 'btn';
+}
+
+main > h3{
+    grid-area: h3;
+}
+
+main .main-button{
+    grid-area: btn;
+}
+
+main .main-text{
+    grid-area: text;
+}
+
+footer{
+    display: grid;
+    grid-template-areas:
+    'l t t'
+    ;
+}
+
+footer .footer-logo{
+    grid-area: l;
+}
+
+footer > table{
+    grid-area: t;
+}
+
+

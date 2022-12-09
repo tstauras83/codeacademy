@@ -1,0 +1,165 @@
+html, body{
+    margin: 0;
+    font-family: "Roboto Light", sans-serif, "DejaVu Sans";
+    font-size: 24px;
+}
+
+body{
+    display:grid;
+    grid-template-areas:
+        'h h h'
+        'm m m'
+        'a a a'
+        'f f f'
+;
+    grid-gap:0;
+    grid-template-rows:50px auto 100px;
+    grid-template-columns:auto auto 300px;
+
+}
+body > *{
+
+}
+
+body > article{
+    grid-area: a;
+}
+
+body > header{
+    grid-area: h;
+}
+
+body > footer{
+    grid-area: f;
+}
+
+body > aside{
+    grid-area: a;
+}
+
+body > main{
+    grid-area: m;
+}
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+    nav {
+        justify-content: left;
+    }
+    article > div{
+        grid-area: d;
+        width: 100%;
+    }
+    .article-div p{
+        height: 150px;
+    }
+    .article-styles{
+        text-align: center;
+        align-items:center;
+        display: block;
+    }
+    .container {
+        padding: 0 0 150px 0;
+        margin-left: 0;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    nav {
+        justify-content: left;
+    }
+    article > div{
+        grid-area: d;
+        width: 100%;
+    }
+    .article-div p{
+        height: 150px;
+    }
+    .article-styles{
+        text-align: center;
+        align-items:center;
+        display: block;
+    }
+    .container {
+        padding: 0 0 150px 0;
+        margin-left: 0;
+    }
+}
+
+@media only screen and (min-width: 720px){
+    nav {
+        justify-content: center;
+    }
+    article > div{
+        grid-area: d;
+        width: 100%;
+    }
+
+    .article-div p{
+        height: 150px;
+    }
+    .article-styles{
+        text-align: center;
+        align-items:center;
+        display: flex;
+    }
+    .container {
+        padding: 0 0 150px 0;
+        margin-left: 0;
+    }
+
+}
+
+@media only screen and (min-width: 1366px){
+
+    nav {
+        justify-content: right;
+    }
+    article > div{
+        grid-area: d;
+        width: 33%;
+    }
+
+    .article-div p{
+        height: 50px;
+    }
+    .article-styles{
+        text-align: center;
+        align-items:center;
+        display: flex;
+    }
+    .container {
+        padding: 0 0 150px 0;
+        margin-left: 33%;
+    }
+
+
+}
+
+@media only screen and (min-width: 1920px){
+
+    nav {
+        justify-content: right;
+    }
+    article > div{
+        grid-area: d;
+        width: 33%;
+    }
+    .article-div p{
+        height: 50px;
+    }
+    .article-styles{
+        text-align: center;
+        align-items:center;
+        display: flex;
+    }
+    .container {
+        padding: 0 0 150px 0;
+        margin-left: 33%;
+    }
+}
+
+
