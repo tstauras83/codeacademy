@@ -17,3 +17,5 @@ let day = prompt("Gimimo diena:") %10;
 let amount = (year + month + day);
 console.log(`Jei paskutiniai gimimo datos skaičiai yra ${year}, ${month}, ${day}, tai suma bus lygi ${amount}.`);
 alert(`Jei paskutiniai gimimo datos skaičiai yra ${year}, ${month}, ${day}, tai suma bus lygi ${amount}.`);
+
+//task 4
