@@ -118,18 +118,28 @@
 
     //task 3
     let a3 = ["A", "B", "1", 1, 2, "Vardas", "", [], null];
-    let b = a3.filter((element) =>{
-        return typeof element === 'number';
-    });
-    let ats3 = b.join(', ');
+    let b = [];
+
+    for(let i3 = 0; i3 < a3.length; i3++){
+        if(typeof a3[i3] === 'number'){
+            b.push(a3[i3]);
+        }
+    }
+
+    let ats3 = b.join(' and ');
     document.getElementById('ptask3').innerHTML = "All numbers from array A: " + ats3;
 
 
     //task 4
     let a4 = ["A", "B", "1", 1, 2, "Vardas", "", [], null];
-    let objects = a4.filter((element) =>{
-        return typeof element === 'object';
-    })
+    let objects = [];
+
+    for(let i4 = 0; i4 < a4.length; i4++){
+        if(typeof a4[i4] === 'object'){
+            objects.push(a4[i4]);
+        }
+    }
+
     let ats4 = objects.length;
     document.getElementById('ptask4').innerHTML = "number of objects: " + ats4.toString();
 
@@ -138,9 +148,13 @@
     let a5 = ["A", "B", "1", 1, 2, "Vardas", "", [], null];
     stringInput = prompt('Please enter either " - ", " _ ", or " + " ' );
     let symbol = stringInput;
-    let strings = a5.filter((element) =>{
-        return typeof element === 'string';
-    })
+
+    let strings = [];
+    for(let i5 = 0; i5 < a5.length; i5++){
+        if(typeof a5[i5] === 'string'){
+            strings.push(a5[i5]);
+        }
+    }
     let ats5 = strings.join(symbol);
     document.getElementById('ptask5.1').innerHTML= 'Specified symbol = ' + symbol;
     document.getElementById('ptask5').innerHTML = 'All string variables and separate them by a specified symbol: ' + '<br>'+ ats5;
