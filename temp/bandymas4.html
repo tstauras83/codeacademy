@@ -13,10 +13,34 @@
 
 <p id="demo"></p>
 
+
+
+
 <script>
+    let studentai = ["Tauras", "Semaska", 1, "CodeAcademy", [5,4,2]]
+    console.log(studentai)
 
 
-    //window.alert("this number is:" + 5+6)
+
+    let a = -5, b = 0, c = -4, d = 4;
+    let intersections = intersection(a, b, c, d);
+
+    function intersection(a, b, c, d) {
+        if (b < c || a > d) {
+            return null;
+        }
+        let x = Math.max(a, c);
+        let y = Math.min(b, d);
+        return [x, y];
+    }
+
+
+    if (intersections === null) {
+        console.log("The intersection does not exist.");
+    } else {
+        console.log(`The intersection is [${intersections[0]}, ${intersections[1]}].`);
+    }
+
 </script>
 </body>
 </html>
