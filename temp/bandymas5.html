@@ -13,6 +13,8 @@
 
 <p id="demo"></p>
 
+<p id="studentsobject"></p>
+
 <script>
 
 /////////////////////////////////////////////////////////////// Task 1 ///////////////////////////////////////////
@@ -63,6 +65,68 @@ console.log(`The type of parameter 'kursas' is '${typeof kursas}'`);
 console.log(`The type of parameter 'kur_mokosi' is '${typeof kur_mokosi}'`);
 console.log(`The type of parameter 'pazymiu_masyvas' is '${typeof pazymiu_masyvas}'`);
 
+/////////////////////////////////////////////////// Task 6 //////////////////////////////////////////////////////////////
+
+let student = {
+    vardas: "Tauras ",
+    pavarde: "Semaska, ",
+    kursas: "PHP Coding, ",
+    kur_mokosi: "Online, ",
+    pazymiu_masyvas: [5, 1, 6]
+};
+
+/////////////////////////////////////////////////// Task 7 //////////////////////////////////////////////////////////////
+
+let students = [
+    {
+        vardas: "Tauras 1",
+        pavarde: "Semaska 1, ",
+        kursas: "PHP Coding 1, ",
+        kur_mokosi: "Online 1, ",
+        pazymiu_masyvas: [5, 1, 6],
+    },
+    {
+        vardas: "Tauras 2",
+        pavarde: "Semaska 2, ",
+        kursas: "PHP Coding 2, ",
+        kur_mokosi: "Online 2, ",
+        pazymiu_masyvas: [5, 1, 6],
+    },
+    {
+        vardas: "Tauras 3",
+        pavarde: "Semaska 3, ",
+        kursas: "PHP Coding 3, ",
+        kur_mokosi: "Online 3, ",
+        pazymiu_masyvas: [5, 1, 6],
+    },
+    {
+        vardas: "Tauras 4",
+        pavarde: "Semaska 4, ",
+        kursas: "PHP Coding 4, ",
+        kur_mokosi: "Online 4, ",
+        pazymiu_masyvas: [5, 1, 6],
+    },
+    {
+        vardas: "Tauras 5",
+        pavarde: "Semaska 5, ",
+        kursas: "PHP Coding 5, ",
+        kur_mokosi: "Online 5, ",
+        pazymiu_masyvas: [5, 1, 6],
+    }
+];
+
+
+
+/////////////////////////////////////////////////// Task 8 //////////////////////////////////////////////////////////////
+let name = students[4].vardas + " " + students[4].pavarde;
+let course = students[4].kursas + " " + students[4].kur_mokosi;
+let grades = students[4].pazymiu_masyvas.join(", ");
+
+
+document.getElementById("studentsobject").innerHTML +=
+    "<p>Name: " + name + "</p>" +
+    "<p>Course: " + course + "</p>" +
+    "<p>Grades: " + grades + "</p>";
 
 
 
