@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+<style>
+    .sheets > div{
+        display: none;
+    }
+    #home {
+        display: block;
+    }
+
+    /* --- Stilizavimo taisykles --- */
+    html, body {
+        width:100%; height:100%;
+        background-color:  rgb(29, 30, 34);
+    }
+    .tabai{
+        display: flex;
+    }
+    .tabai a {
+        background-color: lightgray;
+        padding: 10px;
+        border-radius: 10px 10px 0 0;
+        margin: 10px 5px 0;
+    }
+    .sheets {
+        display: flex;
+        background-color: darkgray;
+        height:250px;
+        width: 500px;
+        position: static;
+        padding: 10px;
+    }
+    .tabai a.active{
+        background-color: darkgray;
+    }
+
+</style>
+</head>
+<body>
+
+<!--<div id="jqueryTask1"> lorem2000</div>
+
+<button type="button"> TEST </button>
+<button type="button"> TEST2 </button>-->
+
+
+<div class="tabai">
+
+    <a href="#home" class="active">HOME</a>
+
+    <a href="#archive">ARCHIVE</a>
+
+    <a href="#settings">SETTINGS</a>
+
+    <a href="#other">OTHER</a>
+
+    <a href="#kita">KITA</a>
+
+</div>
+
+<div class="sheets">
+
+    <div id="home">HOME DATA</div>
+
+    <div id="archive">ARCHIVE DATA</div>
+
+    <div id="settings">SETTINGS DATA</div>
+
+    <div id="other">OTHER DATA</div>
+
+    <div id="kita">KITA DATA</div>
+
+</div>
+
+<script src="../resources/js/jquery-3.6.2.min.js"></script>
+<script src="../resources/js/jquerytasks.js"></script>
+</body>
+</html>

@@ -31,12 +31,12 @@
 
 
 <script>
-/*    let studentai = ["Tauras", "Semaska", 1, "CodeAcademy", [5,4,2]]
-    console.log(studentai)*/
+    /*    let studentai = ["Tauras", "Semaska", 1, "CodeAcademy", [5,4,2]]
+        console.log(studentai)*/
 
-/////////////////if, else ifs examples/////////////////////////////
+    /////////////////if, else ifs examples/////////////////////////////
 
-/*    let a = -5, b = 0, c = -4, d = 4;
+    let a = 3, b = 0, c = -4, d = 4;
     let intersections = intersection(a, b, c, d);
 
     function intersection(a, b, c, d) {
@@ -53,51 +53,47 @@
         console.log("The intersection does not exist.");
     } else {
         console.log(`The intersection is [${intersections[0]}, ${intersections[1]}].`);
-    }*/
+    }
 
 
+    ///////////////////////////while loops examples////////////////////////////////
+
+    // do, while, for
+
+    /*let numbers = [1,2,3,4,5,6,7,8,9];
+        let i = 0;
+        let ats = '';
+         while (numbers.length > i){
+             ats += i + ' = ' + numbers[i] + '<br>';
+             i++;
+         }
 
 
+        ats += 'numbers length = ' + numbers.length;
 
-///////////////////////////while loops examples////////////////////////////////
+        document.querySelector('body > p').innerHTML = ats;*/
 
-// do, while, for
+    /*        .map()
+            .filter()
+            .find()
+            .findIndex()
+            .fill()
+            .copyWithing()
+            .some()
+            .every()
+            .reduce()*/
 
-/*let numbers = [1,2,3,4,5,6,7,8,9];
-    let i = 0;
-    let ats = '';
-     while (numbers.length > i){
-         ats += i + ' = ' + numbers[i] + '<br>';
-         i++;
-     }
-
-
-    ats += 'numbers length = ' + numbers.length;
-
-    document.querySelector('body > p').innerHTML = ats;*/
-
-/*        .map()
-        .filter()
-        .find()
-        .findIndex()
-        .fill()
-        .copyWithing()
-        .some()
-        .every()
-        .reduce()*/
-
-////////////////////////////////////////////////////////////////////////////////////////////
-
+    ////////////////////////////////////////////////////////////////////////////////////////////
 
 
     //task 1
 
-    let a = ["A", "B", "1", 1, 2, "Vardas", "", [], null];
+    let a1 = ["A", "B", "1", 1, 2, "Vardas", "", [], null];
     let task1 = 0;
     let ats1 = ' ';
-    while(a.length > task1){
+    while (a1.length > task1) {
 
-        ats1 += task1 + ' = ' + a[task1] + '<br>';
+        ats1 += task1 + ' = ' + a1[task1] + '<br>';
         task1++;
         task1++;
     }
@@ -107,8 +103,8 @@
     //task 2
     let a2 = ["A", "B", "1", 1, 2, "Vardas", "", [], null];
     let ats2 = ' ';
-    let inputInteger = parseInt(prompt("input the value to go up by:" ));
-    for(let task2 = 0; task2 < a2.length; task2 += inputInteger){
+    let inputInteger = parseInt(prompt("input the value to go up by:"));
+    for (let task2 = 0; task2 < a2.length; task2 += inputInteger) {
         ats2 += task2 + ' = ' + a2[task2] + '<br>';
 
     }
@@ -118,11 +114,11 @@
 
     //task 3
     let a3 = ["A", "B", "1", 1, 2, "Vardas", "", [], null];
-    let b = [];
+    let b3 = [];
 
-    for(let i3 = 0; i3 < a3.length; i3++){
-        if(typeof a3[i3] === 'number'){
-            b.push(a3[i3]);
+    for (let i3 = 0; i3 < a3.length; i3++) {
+        if (typeof a3[i3] === 'number') {
+            b3.push(a3[i3]);
         }
     }
 
@@ -134,8 +130,8 @@
     let a4 = ["A", "B", "1", 1, 2, "Vardas", "", [], null];
     let objects = [];
 
-    for(let i4 = 0; i4 < a4.length; i4++){
-        if(typeof a4[i4] === 'object'){
+    for (let i4 = 0; i4 < a4.length; i4++) {
+        if (typeof a4[i4] === 'object') {
             objects.push(a4[i4]);
         }
     }
@@ -146,23 +142,21 @@
 
     //task 5
     let a5 = ["A", "B", "1", 1, 2, "Vardas", "", [], null];
-    stringInput = prompt('Please enter either " - ", " _ ", or " + " ' );
+    stringInput = prompt('Please enter either " - ", " _ ", or " + " ');
     let symbol = stringInput;
 
     let strings = [];
-    for(let i5 = 0; i5 < a5.length; i5++){
-        if(typeof a5[i5] === 'string'){
+    for (let i5 = 0; i5 < a5.length; i5++) {
+        if (typeof a5[i5] === 'string') {
             strings.push(a5[i5]);
         }
     }
     let ats5 = strings.join(symbol);
-    document.getElementById('ptask5.1').innerHTML= 'Specified symbol = ' + symbol;
-    document.getElementById('ptask5').innerHTML = 'All string variables and separate them by a specified symbol: ' + '<br>'+ ats5;
-
+    document.getElementById('ptask5.1').innerHTML = 'Specified symbol = ' + symbol;
+    document.getElementById('ptask5').innerHTML = 'All string variables and separate them by a specified symbol: ' + '<br>' + ats5;
 
 
 </script>
-
 
 
 </body>
