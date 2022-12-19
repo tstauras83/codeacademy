@@ -236,15 +236,21 @@
     let numInputFields = 1;
     function addInputField() {
         numInputFields++;
+
         let div = document.getElementById("inputFields");
         let label = document.createElement("label");
+
         label.innerHTML = "Column " + numInputFields + ":";
+
         div.appendChild(label);
         div.appendChild(document.createElement("br"));
+
         let input = document.createElement("input");
+
         input.type = "text";
         input.id = "col" + numInputFields;
         input.name = "col" + numInputFields;
+
         div.appendChild(input);
         div.appendChild(document.createElement("br"));
 
