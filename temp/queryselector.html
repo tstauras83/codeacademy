@@ -19,7 +19,11 @@
 <img src="../resources/images/logo.png" alt="Foto" class="galerijos_foto">
 <img src="../resources/images/logo.png" alt="Foto" class="galerijos_foto">
 <img src="../resources/images/logo.png" alt="Foto" class="galerijos_foto">
-<hr/>
+
+<br>
+<br>
+<br>
+
 <div class="wrapper">
     <div class="element">
         1-mas elementas
@@ -35,10 +39,14 @@
     </div>
 </div>
 
-<hr/>
+
+<br>
+<br>
+<br>
+
 
 <div>
-    <button id="button"> CLICK ME!! :D </button>
+    <button id="button"> CLICK ME!! :D</button>
 
     <form>
         <label for="fname">First name:</label><br>
@@ -46,27 +54,36 @@
     </form>
 </div>
 
-
+<br>
+<br>
+<br>
 
 <div>
     <button id="showForm">Show Form</button>
+
     <form id="formId" style="display: none;">
+
         <label for="select1">Select 1:</label><br>
         <select id="select1">
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
-        </select><br><br>
+        </select>
+        <br><br>
         <label for="select2">Select 2:</label><br>
         <select id="select2">
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
-        </select><br><br>
+        </select>
+        <br><br>
         <input type="submit" value="Submit">
     </form>
 </div>
 
+<br>
+<br>
+<br>
 
 <div>
     <table id="myTable">
@@ -80,11 +97,6 @@
             <td>Semaska</td>
             <td>23</td>
         </tr>
-        <tr>
-            <td>Tomas</td>
-            <td>Semaska</td>
-            <td>18</td>
-        </tr>
     </table>
     <br>
 
@@ -97,12 +109,36 @@
         <input type="text" id="input3"><br>
     </form>
     <button id="addRow">Add Row</button>
-
 </div>
 
 <br>
 <br>
 <br>
+
+<div>
+    <table id="myDynamicTable">
+        <tr>
+            <th>Column 1</th>
+        </tr>
+        <tr>
+            <td>My Test</td>
+        </tr>
+    </table>
+    <br />
+    <form id="form">
+        <div id="inputFields">
+            <label for="col1">Column 1:</label><br />
+            <input type="text" id="col1" name="col1"><br />
+        </div>
+        <button type="button" onclick="addInputField()">Add Input Field</button>
+        <button type="button" onclick="addRow()">Add Row</button>
+    </form>
+</div>
+
+<br>
+<br>
+<br>
+
 <div>
 
     <form id="realTimeForm">
@@ -113,7 +149,7 @@
     <div id="realtime">Real-time data will appear here</div>
 </div>
 
-    <script>
+<script>
     //task 1
     console.log(document.querySelectorAll('.galerijos_foto').length);
 
@@ -123,7 +159,7 @@
     //task 3
 
 
-    function Alert(){
+    function Alert() {
         alert(document.querySelectorAll('.galerijos_foto').length);
     }
 
@@ -148,31 +184,31 @@
         uuidE.style.height = '200px';
     }
 
-////////////////////////////////////////////////////////////////////practice tasks ^, actual assignment below //////////////////////
+    ////////////////////////////////////////////////////////////////////practice tasks ^, actual assignment below //////////////////////
 
 
-//task 1 assignment 2
+    //task 1 assignment 2
 
     let names = document.getElementById('button');
     let fieldValue = document.getElementById('fname');
 
     names.addEventListener('click', fieldChange);
 
-    function fieldChange(){
+    function fieldChange() {
         fieldValue.value = "Hello, world!";
     }
 
 
-//task 2 assignment 2
+    //task 2 assignment 2
 
-    document.getElementById("showForm").onclick = function() {
+    document.getElementById("showForm").onclick = function () {
         document.getElementById("formId").style.display = "block";
     }
 
 
-//task 3 assignment 2
+    //task 3 assignment 2
 
-    document.getElementById("addRow").onclick = function() {
+    document.getElementById("addRow").onclick = function () {
 
         let input1 = document.getElementById("input1").value;
         let input2 = document.getElementById("input2").value;
@@ -195,18 +231,64 @@
     }
 
 
-//task 4 assignment 2
+// task 3 assignment 2 part 2 :D
 
-   let form = document.getElementById("realTimeForm");
-   form.addEventListener('submit', function(event){
-      event.preventDefault();
-      document.getElementById('realtime').innerHTML = input4.value;
-   });
+    let numInputFields = 1;
+    function addInputField() {
+        numInputFields++;
+        let div = document.getElementById("inputFields");
+        let label = document.createElement("label");
+        label.innerHTML = "Column " + numInputFields + ":";
+        div.appendChild(label);
+        div.appendChild(document.createElement("br"));
+        let input = document.createElement("input");
+        input.type = "text";
+        input.id = "col" + numInputFields;
+        input.name = "col" + numInputFields;
+        div.appendChild(input);
+        div.appendChild(document.createElement("br"));
 
-   let input4 = document.getElementById('input4');
-   input4.addEventListener('input', function(){
-      document.getElementById('realtime').innerHTML = input4.value;
-   });
+        // Add a new header cell to the table
+        let table = document.getElementById("myDynamicTable");
+        let headerRow = table.rows[0];
+        let cell = headerRow.insertCell(-1);
+        cell.innerHTML = "Column " + numInputFields;
+    }
+
+    function addRow() {
+        // Get the values from the form fields
+        let values = [];
+        for (let i = 1; i <= numInputFields; i++) {
+            values.push(document.getElementById("col" + i).value);
+        }
+
+        // Get the table
+        let table = document.getElementById("myDynamicTable");
+
+        // Create a new row
+        let row = table.insertRow(-1);
+
+        // Insert new cells
+        for (let i = 0; i < numInputFields; i++) {
+            let cell = row.insertCell(i);
+            cell.innerHTML = values[i];
+        }
+    }
+
+
+
+    //task 4 assignment 2
+
+    let form = document.getElementById("realTimeForm");
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        document.getElementById('realtime').innerHTML = input4.value;
+    });
+
+    let input4 = document.getElementById('input4');
+    input4.addEventListener('input', function () {
+        document.getElementById('realtime').innerHTML = input4.value;
+    });
 
 
 </script>
