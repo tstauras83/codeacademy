@@ -8,7 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-<img src="/img/off.png" id="lempute"/>
 <h1 id="uuid2">Darbas su Elementais</h1>
 <h3 id="uuid">Sveiki čia matysime rezultatus</h3>
 <button onClick="Alert()">Skaiciuoti paveikslelius</button>
@@ -36,8 +35,85 @@
     </div>
 </div>
 
+<hr/>
 
-<script>
+<div>
+    <button id="button"> CLICK ME!! :D </button>
+
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="test"><br>
+    </form>
+</div>
+
+
+
+<div>
+    <button id="showForm">Show Form</button>
+    <form id="formId" style="display: none;">
+        <label for="select1">Select 1:</label><br>
+        <select id="select1">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+        </select><br><br>
+        <label for="select2">Select 2:</label><br>
+        <select id="select2">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+        </select><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+
+<div>
+    <table id="myTable">
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Tauras</td>
+            <td>Semaska</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>Tomas</td>
+            <td>Semaska</td>
+            <td>18</td>
+        </tr>
+    </table>
+    <br>
+
+    <form>
+        <label for="input1">Name:</label>
+        <input type="text" id="input1"><br>
+        <label for="input2">Surname:</label>
+        <input type="text" id="input2"><br>
+        <label for="input3">Age:</label>
+        <input type="text" id="input3"><br>
+    </form>
+    <button id="addRow">Add Row</button>
+
+</div>
+
+<br>
+<br>
+<br>
+<div>
+
+    <form id="realTimeForm">
+        <label for="input4">Type here!: </label>
+        <input type="text" id="input4">
+        <input type="submit" value="Submit">
+    </form>
+    <div id="realtime">Real-time data will appear here</div>
+</div>
+
+    <script>
     //task 1
     console.log(document.querySelectorAll('.galerijos_foto').length);
 
@@ -49,7 +125,7 @@
 
     function Alert(){
         alert(document.querySelectorAll('.galerijos_foto').length);
-    };
+    }
 
     // task 4
 
@@ -71,6 +147,68 @@
         uuidE.style.width = '200px';
         uuidE.style.height = '200px';
     }
+
+
+
+
+//task 1 assignment 2
+
+    let names = document.getElementById('button');
+    let fieldValue = document.getElementById('fname');
+
+    names.addEventListener('click', fieldChange);
+
+    function fieldChange(){
+        fieldValue.value = "Hello, world!";
+    }
+
+
+
+
+//task 2 assignment 2
+
+    document.getElementById("showForm").onclick = function() {
+        document.getElementById("formId").style.display = "block";
+    }
+
+
+//task 3 assignment 2
+
+    document.getElementById("addRow").onclick = function() {
+
+        let input1 = document.getElementById("input1").value;
+        let input2 = document.getElementById("input2").value;
+        let input3 = document.getElementById("input3").value;
+
+        let table = document.getElementById("myTable");
+        let row = document.createElement("tr");
+        let cell1 = document.createElement("td");
+        let cell2 = document.createElement("td");
+        let cell3 = document.createElement("td");
+
+        cell1.innerHTML = input1;
+        cell2.innerHTML = input2;
+        cell3.innerHTML = input3;
+
+        row.appendChild(cell1);
+        row.appendChild(cell2);
+        row.appendChild(cell3);
+        table.appendChild(row);
+    }
+
+//task 4 assignment 2
+
+   let form = document.getElementById("realTimeForm");
+   form.addEventListener('submit', function(event){
+      event.preventDefault();
+      document.getElementById('realtime').innerHTML = input4.value;
+   });
+
+   let input4 = document.getElementById('input4');
+   input4.addEventListener('input', function(){
+      document.getElementById('realtime').innerHTML = input4.value;
+   });
+
 </script>
 </body>
 </html>
