@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<img src="/img/off.png" id="lempute"/>
+<h1 id="uuid2">Darbas su Elementais</h1>
+<h3 id="uuid">Sveiki čia matysime rezultatus</h3>
+<button onClick="Alert()">Skaiciuoti paveikslelius</button>
+<hr/>
+<img src="/img/logo.png" alt="Foto" class="galerijos_foto">
+<img src="/img/logo.png" alt="Foto" class="galerijos_foto">
+<img src="/img/logo.png" alt="Foto" class="galerijos_foto">
+<img src="/img/logo.png" alt="Foto" class="galerijos_foto">
+<img src="/img/logo.png" alt="Foto" class="galerijos_foto">
+<img src="/img/logo.png" alt="Foto" class="galerijos_foto">
+<img src="/img/logo.png" alt="Foto" class="galerijos_foto">
+<hr/>
+<div class="wrapper">
+    <div class="element">
+        1-mas elementas
+    </div>
+    <div class="element">
+        2-ras elementas
+    </div>
+    <div class="element">
+        3-čias elementas
+    </div>
+    <div class="element">
+        4-tas elementas
+    </div>
+</div>
+
+
+<script>
+    //task 1
+    console.log(document.querySelectorAll('.galerijos_foto').length);
+
+    //task 2
+    document.getElementById('uuid').innerHTML += " Siame puslapyje yra " + document.querySelectorAll('.galerijos_foto').length + " paveiksleliai."
+
+    //task 3
+
+
+    function Alert(){
+        alert(document.querySelectorAll('.galerijos_foto').length);
+    };
+
+    // task 4
+
+    let images = document.querySelectorAll('.galerijos_foto');
+
+    for (let i = 0; i < images.length; i++) {
+        if (i % 2 === 0) {
+            images[i].alt = 'testas';
+        }
+    }
+
+    //task 5
+
+    let uuidE = document.getElementById('uuid');
+
+    if (uuidE) {
+        uuidE.style.backgroundColor = 'green';
+        uuidE.style.fontSize = '24px';
+        uuidE.style.width = '200px';
+        uuidE.style.height = '200px';
+    }
+</script>
+</body>
+</html>
